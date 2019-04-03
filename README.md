@@ -1,0 +1,33 @@
+# 13LID
+This repository contains a CNN architecture to classify 13 Indian Languages from their spoken utterance. 2 second short utterances have also been classified.
+
+This is not a very complex model but still performs good, gives accuracy of around 70% for 5 second utterances and 66.7% for 2 second ones. Performance through heatmaps (which helps in identifying confused language pairs) is also shown below.
+
+The dataset used in this repo is described in this [paper](https://www.semanticscholar.org/paper/An-Investigation-of-Deep-Neural-Network-for-in-MounikaK.-Achanta/5f6ffd39e74a66492cfb34b62a21e91d08332e35).
+
+## Requirements
+1. python3
+2. librosa - to generate mel spectrograms
+3. numpy
+4. sklearn
+5. tensorflow-gpu 1.10.0
+6. keras - 2.2.4
+
+## Hardware
+1 Nvidia GeForce GTX 1080 Ti gpu was used for training (recommended).
+
+## How to use it
+1. Make a folder for your dataset, inside which all languages have their separate folders containing their respective wav files. Then change the value of data_folder variable in all feature extraction codes.
+2. Then run feature extraction to generate mel spectrograms.
+3. Then use the classifier notebook to run the CNN models.
+
+## Theory
+mel spectrogram = spectrogram with frequency mapped to mel space. [See](https://librosa.github.io/librosa/_modules/librosa/feature/spectral.html#melspectrogram)
+
+Now since mel spectrograms are a 2-dimensional signal, we can use CNNs as we do for image classification.
+
+I have used a combination of convolution+pooling+dropout twice, then 2 dense layers followed by softmax activation. All activations are done with Relu. For detailed description regarding the model, please look at the model summary given in the classification notebook.
+
+## Heatmaps
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Heatmap for 2sec utterances")
+We can clearly see that gujarati-marathi is the most confused language pair for our classifier.
