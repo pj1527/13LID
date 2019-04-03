@@ -29,5 +29,5 @@ Now since mel spectrograms are a 2-dimensional signal, we can use CNNs as we do 
 I have used a combination of convolution+pooling+dropout twice, then 2 dense layers followed by softmax activation. All activations are done with Relu. For detailed description regarding the model, please look at the model summary given in the classification notebook.
 
 ## Heatmaps
+We can clearly see that gujarati-marathi is the most confused language pair for our classifier :
 ![alt text](https://github.com/pj1527/13LID/blob/master/2sec_heatmap.png "Heatmap for 2sec utterances")
-We can clearly see that gujarati-marathi is the most confused language pair for our classifier.
