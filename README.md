@@ -14,7 +14,7 @@ The dataset used in this repo is described in this [paper](https://www.semantics
 6. keras - 2.2.4
 
 ## Hardware
-1 Nvidia GeForce GTX 1080 Ti gpu was used for training (recommended).
+1 Nvidia GeForce GTX 1080 Ti gpu was used for training (gpu recommended), which was available through my institute's high performance computing cluster and it uses slurm as workload manager.
 
 ## How to use it
 1. Make a folder for your dataset, inside which all languages have their separate folders containing their respective wav files. Then change the value of data_folder variable in all feature extraction codes.
