@@ -19,7 +19,10 @@ The dataset used in this repo is described in this [paper](https://www.semantics
 ## How to use it
 1. Make a folder for your dataset, inside which all languages have their separate folders containing their respective wav files. Then change the value of data_folder variable in all feature extraction codes.
 2. Then run feature extraction to generate mel spectrograms.
-3. Then use the classifier notebook to run the CNN models.
+3. Then use the classifier notebook to train the CNN models. This notebook saves your trained model in hdf5 format.
+4. You can classify.py script to classify any utterance by typing the following command :
+python3 classify.py path_file,
+where path_file is the path to the file you want to classify.
 
 ## Theory
 mel spectrogram = spectrogram with frequency mapped to mel space. [See](https://librosa.github.io/librosa/_modules/librosa/feature/spectral.html#melspectrogram)
